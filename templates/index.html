@@ -1,13 +1,7 @@
 {% extends 'base.html' %}
-
 {% block content %}
 
-
-<h1 class="text-center">All auth starter</h1>
-{% if user.is_authenticated %}
-    <p class="text-center">Welcome {{user.username}}</p>
-{% endif %}
-
+{% include 'partials/hero.html' %}
 
 
 {% endblock content %}
