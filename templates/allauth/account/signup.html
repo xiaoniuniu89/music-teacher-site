@@ -1,24 +1,33 @@
-{% extends "base.html" %}
-{% load crispy_forms_tags %}
+{% load widget_tweaks %}
 
 {% load i18n %}
 
-{% block head_title %}{% trans "Signup" %}{% endblock %}
 
 {% block content %}
-<div class="container col-12 col-md-6 py-5 auth-container">
+<div class="container flex flex-col  py-5 ">
+    <button hx-get="{% url 'load_login_form' %}"  hx-trigger="click"  hx-target="#login_reg_form" class="btn px-11 py-2 align-center m-auto align-middle text-red-400 border border-red-400 rounded hover:bg-red-400 hover:text-white transition duration-75 ease-in">Login</button>
+    <div class="flex items-center my-4 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5">
+      <p class="text-center font-semibold mx-4 mb-0">Or</p>
+    </div>
+  
 
-<h1>{% trans "Sign Up" %}</h1>
 
-<p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+  <form class="signup flex flex-col" id="signup_form" method="post" action="{% url 'account_signup' %}">
+      {% csrf_token %}
+      <h2 class="mb-5 text-center ">Register for an account</h2>
+      <div class="mb-5">{% render_field form.username class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"  %}</div>
+      <div class="mb-5">{% render_field form.email class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"  %}</div>
+      <div class="mb-5">{% render_field form.password1 class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"  %}</div>
+      <div class="mb-5">{% render_field form.password2 class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"  %}</div>
+      
+      {% if redirect_field_value %}
+      <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+      {% endif %}
+      <button type="submit" class="btn align-center inline-block px-7 py-3 bg-blue-400 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-500 hover:shadow-lg focus:bg-blue-400 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
+        Register
+      </button>
+  </form>
 
-<form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
-  {% csrf_token %}
-  {{ form|crispy }}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-  {% endif %}
-  <button class="mt-2 btn btn-primary primaryAction btn-black pt-2 pb-2 px-4 text-uppercase" type="submit">{% trans "Sign Up" %} &raquo;</button>
-</form>
+
 </div>
 {% endblock %}

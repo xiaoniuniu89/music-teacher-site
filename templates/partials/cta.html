@@ -1,0 +1,14 @@
+{% load static %}
+
+<section class="flex justify-start">
+    <div class="flex max-w-screen-xl justify-between px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 w-3/4 ">
+        <div class=" w-3/5 mr-auto place-self-center lg:col-span-5 h-full">
+            <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">Tools for musicians</h1>
+            <img src="{% static 'img/polar-92.png' %}" alt="Musicianist">
+        </div>
+        <div id="login_reg_form" class="hidden bg-white rounded overflow-hidden shadow-lg w-2/5 md:mt-3 md:col-span-5 md:flex p-5">
+            {% include 'allauth/account/signup.html' %}
+        </div>                
+    </div>
+</section>
+
