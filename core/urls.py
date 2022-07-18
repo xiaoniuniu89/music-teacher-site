@@ -6,7 +6,7 @@ urlpatterns = [
     path("", landing, name="landing"),
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
-    path('dashboard/', include('dashboard.urls')),
+    path('manager/', include('dashboard.urls')),
 ]
 
 htmx_urlpatterns = [

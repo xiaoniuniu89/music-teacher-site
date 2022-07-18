@@ -1,11 +1,41 @@
 {% extends 'base.html' %}
+{% block extra_css %}
+<style>
+    .sidebar-transition {
+        transition: .5s;
+        }
+    
+    @keyframes sidebar-opacity {
+        from {opacity: 0;}
+        to {opacity: 1;}
+        }
+    
+    .sidebar-opacity {
+        animation-name: sidebar-opacity;
+        animation-duration: .7s;
 
+    }
+
+    .hide {
+    
+    height: 0;
+   
+    }
+
+</style>
+{% endblock extra_css %}
 {% block content %}
 
 
-<div class="w-full h-full p-4 m-8 overflow-y-auto ">
+<div class="w-full h-full p-4 m-8 overflow-y-auto">
+    <h1 class="text-center mt-5">Welcome {{user.username}}</h1>
    
-    <h1 class="text-center">Welcome {{user.username}}</h1>
+
+    <div id="manager-content" class="mt-2">
+
+        {% include 'dashboard/partials/agenda.html' %}
+
+    </div>
 
 </div>
 
