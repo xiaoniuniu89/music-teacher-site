@@ -1,0 +1,16 @@
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    {% if title %}
+        <title>{{title}}</title>
+    {% else %}
+        <title>Title</title>
+    {% endif %}
+    <script src="https://unpkg.com/htmx.org@1.8.0"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <link rel="stylesheet" href="{% static 'src/output.css' %}">
+
+    
+    {% block extra_css %}{% endblock extra_css %}
+</head>

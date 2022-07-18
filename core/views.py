@@ -15,3 +15,4 @@ def load_login_form(request):
 def load_register_form(request):
     form = SignupForm()
     return render(request, 'allauth/account/signup.html', {'form': form})
+

@@ -12,6 +12,8 @@ urlpatterns = [
 htmx_urlpatterns = [
     path('load-login-form/', load_login_form, name="load_login_form"),
     path('load-reg-form/', load_register_form, name="load_register_form"),
+
+    
 ]
 
 urlpatterns += htmx_urlpatterns

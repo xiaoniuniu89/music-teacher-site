@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+{% include 'partials/head.html' %}
+
+    <body class="font-nunito relative">
+        
+            {% include 'partials/logout_button.html' %}
+
+            <div class="flex">
+
+                {% include 'partials/sidebar.html' %}
+
+                {% block content %}{% endblock content %}
+                    
+            </div>
+     
+
+        {% include 'partials/footer.html' %}
+
+    </body>
+  </html>
+        

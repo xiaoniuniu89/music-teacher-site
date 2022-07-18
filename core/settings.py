@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
+from django.shortcuts import reverse
 
 from pathlib import Path
 import os
@@ -177,8 +178,10 @@ SOCIALACCOUNT_PROVIDERS = {
 }
 
 LOGIN_URL = '/accounts/login/'
-LOGIN_REDIRECT_URL = '/dashboard/'
+LOGIN_REDIRECT_URL = '/manager/'
 LOGOUT_REDIRECT_URL = '/'
+
+print(LOGOUT_REDIRECT_URL)
 
 
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
