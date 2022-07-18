@@ -8,6 +8,9 @@ module.exports = {
       fontFamily: {
         nunito: ['Nunito']
       },
+      height: {
+        'sidebar': '42rem',
+      }
     },
   },
 }

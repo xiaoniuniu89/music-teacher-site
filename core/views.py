@@ -5,7 +5,7 @@ from allauth.account.forms import LoginForm, SignupForm
 
 def landing(request):
     form = SignupForm()
-    return render(request, 'index.html', {'form': form})
+    return render(request, 'index.html', {'form': form, 'title': 'Musicianist'})
 
 
 def load_login_form(request):

@@ -62,6 +62,7 @@ INSTALLED_APPS = [
     "django_htmx",
     'widget_tweaks',
     'django_extensions',
+    'dashboard'
 ]
 
 MIDDLEWARE = [
@@ -176,7 +177,7 @@ SOCIALACCOUNT_PROVIDERS = {
 }
 
 LOGIN_URL = '/accounts/login/'
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/dashboard/'
 LOGOUT_REDIRECT_URL = '/'
 
 

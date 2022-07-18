@@ -19,11 +19,23 @@
     {% block extra_css %}{% endblock extra_css %}
 </head>
 
-    <body class="font-nunito ">
+    <body class="font-nunito relative">
+        
+        
+        {% if user.is_authenticated %}
+            <a class="absolute right-10 top-5" href="{% url 'account_logout' %}">logout</a>
+            <div class="flex">
 
-        {% include 'partials/navbar.html' %}
+            {% include 'partials/sidebar.html' %}
+        {% else %}
+            {% include 'partials/navbar.html' %}
+        {% endif %}
 
         {% block content %}{% endblock content %}
+                
+        {% if user.is_authenticated %}
+            </div>
+        {% endif %}
 
         {% include 'partials/footer.html' %}
 
