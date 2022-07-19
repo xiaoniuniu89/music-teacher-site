@@ -57,13 +57,16 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    'slippers',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     "django_htmx",
     'widget_tweaks',
     'django_extensions',
-    'dashboard'
+    'dashboard',
+    'calendar_app',
+    
 ]
 
 MIDDLEWARE = [
@@ -181,7 +184,6 @@ LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/manager/'
 LOGOUT_REDIRECT_URL = '/'
 
-print(LOGOUT_REDIRECT_URL)
 
 
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'

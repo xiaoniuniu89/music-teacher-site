@@ -1,6 +1,7 @@
 from django.urls import path
 from .views import (
     dashboard,
+    agenda
    
 )
 
@@ -11,6 +12,8 @@ urlpatterns = [
 
 
 htmx_urlpatterns = [
+    path('agenda/', agenda, name='agenda')
+    
 ]
 
 

@@ -1,0 +1,9 @@
+<li>
+  <div hx-get="{{url}}" hx-target="#manager-content" hx-trigger="click" hx-push-url="true" :class="sidebar ? '' : 'justify-center' " class="cursor-pointer"  href="#">
+    <div class="flex items-center px-4 py-2 mt-5 text-gray-600 rounded-md hover:bg-gray-200">
+      {{children}}
+    <span :class="sidebar ? 'sidebar-opacity' : 'hidden' " class="mx-4 font-medium">{{name|title}}</span>
+    </div>
+  </div>
+
+  </li>

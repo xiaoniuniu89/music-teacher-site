@@ -7,6 +7,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
     path('manager/', include('dashboard.urls')),
+    path('manager/calendar/', include('calendar_app.urls')),
 ]
 
 htmx_urlpatterns = [
