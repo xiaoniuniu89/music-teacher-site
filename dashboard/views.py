@@ -8,7 +8,9 @@ def dashboard(request):
 
 @login_required
 def agenda(request):
-    return render(request, 'dashboard/partials/agenda.html')
+    if request.htmx:
+        return render(request, 'dashboard/partials/agenda.html')
+    return redirect('dashboard')
 
 
 

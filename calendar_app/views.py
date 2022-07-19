@@ -1,5 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 # Create your views here.
 def calendar(request):
-    return render(request, 'calendar_app/calendar.html')
+    if request.htmx:
+        return render(request, 'calendar_app/calendar.html')
+    return redirect('dashboard')
